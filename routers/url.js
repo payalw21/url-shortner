@@ -1,8 +1,13 @@
 const express = require("express");
-const handleGenerateNewShhortURL = require("../controllers/url");
-const { model } = require("mongoose");
+const {
+  handleGenerateNewShhortURL,
+  handleGetAnalytics,
+} = require("../controllers/url");
+
 const router = express.Router();
 
 router.post("/", handleGenerateNewShhortURL);
+
+router.get("/analytics/:shortId", handleGetAnalytics);
 
 module.exports = router;
